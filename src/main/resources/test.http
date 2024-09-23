@@ -1,0 +1,31 @@
+POST localhost:8080/api/v1/jobs/add-job
+Content-Type: application/json
+
+{
+  "jobId": 1,
+  "jobTitle": "IT par",
+  "jobDescription" : "back end",
+  "jobLocation": "yashnobod",
+  "companyName": "CDTI",
+  "requiredSkills": ["spring boot", "rest api"],
+  "jobType": "FULL_TIME",
+  "workModel": "ONSITE"
+}
+###Get getJobs
+GET localhost:8080/api/v1/jobs
+
+###Post applyToJob
+POST localhost:8080/api/v1/jobs/apply
+Content-Type: application/json
+
+{
+  "firstName": "Ali",
+  "lastName": "Aliyev",
+  "userEmail": "aliyev1508@gmail.com",
+  "phoneNumber": "998934434845",
+  "primarySkills": ["hibernate, spring boot, rest api"],
+  "jobId": 1
+}
+
+###Get getUsers
+GET localhost:8080/api/v1/jobs/usersList
