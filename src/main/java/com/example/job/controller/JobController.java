@@ -74,4 +74,25 @@ public class JobController {
     public ResponseEntity<List<UserList>> getUsers() {
         return new ResponseEntity<>(userService.getUserList(), HttpStatus.OK);
     }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteById(@PathVariable("id") Long id) {
+        jobService.deleteById(id);
+    }
+
+    @DeleteMapping("/deleteByPhoneNumber/{phoneNumber}")
+    public void deleteByPhoneNumber(@PathVariable String phoneNumber) {
+        userService.withdrawApplication(phoneNumber);
+    }
+    @DeleteMapping("/delete")
+    public void delete(@RequestParam(required = false) Long id,
+                       @RequestParam(required = false) String phoneNumber) {
+        if (id != null) {
+            deleteById(id);
+        } else if (phoneNumber != null) {
+            deleteByPhoneNumber(phoneNumber);
+        } else {
+            throw new IllegalArgumentException("Either id or phone number must be provided");
+        }
+    }
 }

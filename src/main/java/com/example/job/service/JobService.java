@@ -22,7 +22,7 @@ public class JobService {
      * **/
     public Long addJob(JobModel jobModel) {
         JobModel returned = jobRepository.save(jobModel);
-        System.out.println(returned);
+        System.out.println("job Id : " + returned);
         return returned.getJobId();
     }
     /*****
@@ -39,4 +39,5 @@ public class JobService {
     public void deleteById(Long id) {
         jobRepository.deleteById(id);
     }
+
 }

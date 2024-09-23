@@ -3,29 +3,39 @@ Content-Type: application/json
 
 {
   "jobId": 1,
-  "jobTitle": "IT par",
+  "jobTitle": "developer",
   "jobDescription" : "back end",
-  "jobLocation": "yashnobod",
-  "companyName": "CDTI",
-  "requiredSkills": ["spring boot", "rest api"],
+  "jobLocation": "chilonzor",
+  "companyName": "Anor bank",
+  "requiredSkills": ["Java", "Spring boot"],
   "jobType": "FULL_TIME",
   "workModel": "ONSITE"
 }
-###Get getJobs
+###Get all Jobs
 GET localhost:8080/api/v1/jobs
 
-###Post applyToJob
+###Post apply To Job
 POST localhost:8080/api/v1/jobs/apply
 Content-Type: application/json
 
 {
-  "firstName": "Ali",
+  "firstName": "Alisher",
   "lastName": "Aliyev",
-  "userEmail": "aliyev1508@gmail.com",
-  "phoneNumber": "998934434845",
-  "primarySkills": ["hibernate, spring boot, rest api"],
+  "userEmail": "alish7481@gmail.com",
+  "phoneNumber": "998992565566",
+  "primarySkills": ["spring boot, hibernate, postgresql"],
   "jobId": 1
 }
 
-###Get getUsers
+###Get all Users
 GET localhost:8080/api/v1/jobs/usersList
+
+###Delete job By Id
+DELETE localhost:8080/api/v1/jobs/delete/1
+
+###Delete user By Phone Number
+DELETE localhost:8080/api/v1/jobs/deleteByPhoneNumber/998945633300
+
+
+
+
